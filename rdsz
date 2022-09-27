@@ -1,0 +1,191 @@
+n1=int(input("n1="))
+n2=int(input("n2="))
+n3=int(input("n3="))
+#a)cel mai mare divizor comun	
+def d(x,y):
+	    listx=[]
+	    listy=[]
+	    for i in range(1,x+1):
+	        if x%i==0 :
+	            listx.append(i)
+	    for k in range(1,y+1):
+	        if y%k==0 :
+	            listy.append(k)
+	    c=set(listx).intersection(listy)      
+	    cm=max(c)
+	    return cm
+	
+
+def d(x,z):
+	    listx=[]
+	    listz=[]
+	    for i in range(1,x+1):
+	        if x%i==0 :
+	            listx.append(i)
+	    for k in range(1,z+1):
+	        if z%k==0 :
+	            listz.append(k)
+	    c=set(listx).intersection(listz)      
+	    cm=max(comun)
+	    return cm
+	
+
+def d(y,z):
+	    listy=[]
+	    listz=[]
+	    for i in range(1,y+1):
+	        if y%i==0 :
+	            listy.append(i)
+	    for k in range(1,z+1):
+	        if z%k==0 :
+	            listz.append(k)
+	    c=set(listy).intersection(listz)      
+	    cm=max(c)
+	    return cm
+	
+
+a=d(n1,n2)
+b=d(n1,n3)
+c=d(n2,n3)
+	
+
+def md(a,b,c):
+	    if a>b:
+	        if c>a:
+	            max=c
+	        else:
+	            max=a
+	    else:
+	        if c>b:
+	            max=c
+	        else:
+	            max=b
+	    return max
+print('Cel mai mare divizor comun al celor 3 nr este=: ',md(a,b,c))
+	
+#cel mai mic multiplu comun
+def m(x,y):
+	    multi=[]
+	    if(x>y):
+	        i=x
+	    if(y>x):
+	        i=y
+	    else:
+	        i=x
+	    multi=0
+	    while len(multi)<5:
+	        if(i%x==0 and i%y==0):
+	            multi.append(i)
+	            i+=1
+	        else:
+	            i+=1  
+	    return min(multi)
+	
+
+def m(x,z):
+	    multi=[]
+	    if(x>z):
+	        i=x
+	    if(z>x):
+	        i=z
+	    else:
+	        i=x
+	    multi=0
+	    while len(multi)<5:
+	        if(i%x==0 and i%z==0):
+	            multi.append(i)
+	            i+=1
+	        else:
+	            i+=1  
+	    return min(multis)
+	
+def m(y,z):
+	    multi=[]
+	    if(y>z):
+	        i=y
+	    if(z>y):
+	        i=z
+	    else:
+	        i=y
+	    mu=0
+	    while len(multi)<5:
+	        if(i%y==0 and i%z==0):
+	            multi.append(i)
+	            i+=1
+	        else:
+	            i+=1  
+	    return min(multi)
+	
+
+j=m(n1,n2)
+k=m(n1,n3)
+l=m(n2,n3)
+def m(j1,k1,l1):
+	    if j1<k1:
+	        if l1<j1:
+	            min=l1
+	        else:
+	            min=j1
+	    else:
+	        if l1<k1:
+	            min=l1
+	        else:
+	            min=k1
+	    return min
+print('Cel mai mic multiplu comun al celor 3 nr este: ',m(j,k,l))
+#c)valoarea maxima	
+def ma(x,y,z):
+	    if n1>n2:
+	        if n3>n1:
+	            max=n3
+	        else:
+	            max=n1
+	    else:
+	        if n3>n2:
+	            max=n3
+	        else:
+	            max=n2
+	    return max
+print('valoarea maxima:',n1,n2,'si',n3,'este: ',ma(n1,n2,n3))
+#d)valoarea minima
+def minim(x,y,z):
+	    if n1<n2:
+	        if n3<n1:
+	            min=n3
+	        else:
+	            min=n1
+	    else:
+	        if n3<n2:
+	            min=n3
+	        else:
+	            min=n2
+	    return min
+print('valoarea minima :',n1,n2,'si',n3,'este: ',minim(n1,n2,n3))
+#G)LATURILE UNUI TRIUNGHI
+def t(x,y,z):
+    import math
+    if (x+y>z) and (x+z>y) and (y+z>x):
+        sp=(x+y+z)/2\
+        #ARIA
+        A=round(math.sqrt(sp*(sp-x)*(sp-y)*(sp-z)),2)
+        #PERIMETRU
+        P=sp*2
+        return print("Laturile pot forma un triunghi, astfel aria acestuia va fi: ",A,", iar perimetrul: ",P)
+    else:
+        return (t)
+print("Laturile date nu pot forma un triunghi!", t(n1,n2,n3))
+	
+
+	
+#H)SOLUTIILE REALE A ECUATIEI
+def se(x,y,z):
+	    if x!=0:
+	        d=(y**2)-(4*x*z)
+	        if d>0:
+	            s1=(-y-(d**0.5))/(2*x)
+	            s2=(-y+(d**0.5))/(2*x)
+	        elif d==0:
+	            s1=s2=(-y)/(2*x)
+	    else: 
+	          print('ecuatia nu are solutii')
+print(" Ecuatia',n1,'x2 +',n2,'x +',n3,'are solutiile reale ",se(n1,n2,n3))
